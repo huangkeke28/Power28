@@ -395,18 +395,224 @@ int main()
 }
 #endif
 
+//
+//#include<stdio.h>
+//#include<Windows.h>
+//#include"add.h"
+//
+//#pragma comment(lib,"2019_10_17_2.lib")
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int c = Add(a, b);
+//	printf("c = %d\n", c);
+//	system("pause");
+//	return 0;
+//}
 
+//在屏幕上打印菱形图案
+
+
+//
+//#include<stdio.h>
+//#include<Windows.h>
+//#pragma warning(disable:4996)
+//int main()
+//{
+//	int line = 0;
+//	scanf("%d", &line);
+//	int i = 0;
+//	for (i = 0; i < line; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < line - 1 - i; j++)
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0; j < 2 * i + 1; j++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	for (i = 0; i < line - 1; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j <= i; j++)
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0; j <2 * (line - 1 - i) -1; j++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	system("pause");
+//	return 0;
+//}
+//#include<stdio.h>
+//#include<Windows.h>
+//#pragma warning(disable:4996)
+//int main()
+//{
+//	int line = 0;
+//	int i = 0;
+//	scanf("%d", &line);
+//	for (i = 0; i < line; i++)
+//	{
+//		//打印一行 先打印空格 再打印*
+//		int j = 0;
+//		for (j = 0; j < line - 1 - i; j++)
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0; j < 2 * i + 1; j++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	for (i = 0; i < line - 1; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j <= i; j++)
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0; j < (line - 1 -i)*2 - 1; j++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	system("pause");
+//	return 0;
+//}
+//#include<stdio.h>
+//#include<Windows.h>
+//#pragma warning(disable:4996)
+//int main()
+//{
+//	int line = 0;
+//	int i = 0;
+//	int j = 0;
+//	scanf("%d", &line);
+//	for (i = 0; i < line; i++)
+//	{
+//		for (j = 0; j < line - 1 - i; j++)
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0; j < 2 * i + 1; j++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	for (i = 0; i < line - 1; i++)
+//	{
+//		for (j = 0; j <= i; j++)
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0; j < (line - 1 - i) * 2 - 1; j++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	system("pause");
+//	return 0;
+//}
+//求“水仙花数”并输出
+
+//#include<stdio.h>
+//#include<Windows.h>
+//#include<math.h>
+//int main()
+//{
+//	int i = 0;
+//	for (i = 1; i <= 1000000; i++)
+//	{
+//		//判断i是否为水仙花数
+//		//1.求位数 2.求次方和 
+//		// 123
+//		int count = 0;
+//		int sum = 0;
+//		int tmp = i;
+//		while (tmp)
+//		{
+//			tmp /= 10;
+//			count++;
+//		}
+//		//2.求次方和
+//		tmp = i;
+//		while (tmp)
+//		{
+//			sum += pow(tmp % 10, count);  
+//			tmp /= 10;
+//		}
+//		//3.判断
+//		if (sum == i)
+//		{
+//			printf("%d ", i);
+//		}
+//	}
+//	system("pause");
+//	return 0;
+//}
+//#include<stdio.h>
+//#include<Windows.h>
+//#pragma warning(disable:4996)
+//int main()
+//{
+//	int a = 0;
+//	int n = 0;
+//	int sum = 0;
+//	int i = 0;
+//	int k = 0;
+//	scanf("%d %d", &a, &n);
+//	for (i = 0; i < n; i++)
+//	{
+//		k = k * 10 + a;
+//		sum += k;
+//	}
+//	printf("sum = %d\n", sum);
+//	system("pause");
+//	return 0;
+//}
 #include<stdio.h>
 #include<Windows.h>
-#include"add.h"
-
-#pragma comment(lib,"2019_10_17_2.lib")
 int main()
 {
-	int a = 10;
-	int b = 20;
-	int c = Add(a, b);
-	printf("c = %d\n", c);
+	int ch = 0;
+	while ((ch = getchar()) != EOF)//end of file
+	{
+		if (ch >= 'A'&& ch <= 'Z')
+		{
+			putchar(ch + 32);
+		}
+		else if (ch >= 'a'&& ch <= 'z')
+		{
+			putchar(ch - 32);
+		}
+		else if (ch >= '0'&& ch <= '9')
+		{
+			continue;
+		}
+		else
+		{
+			putchar(ch);
+		}
+	}
 	system("pause");
 	return 0;
 }
+//库函数 #include<ctype.h>
+//isupper() 判断是不是大写 是返回非0 不是返回0
+//islower() 判断是不是小写 是返回非0 不是返回0
+//isdigit() 判断是不是数字 是返回非0 不是返回0
+//tolower() 返回小写
+//toupper() 返回大写
