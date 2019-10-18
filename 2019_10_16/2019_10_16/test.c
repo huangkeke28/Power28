@@ -163,35 +163,33 @@
 //如果是小写字符就输出对应的大写字符，
 //如果接收的是大写字符，就输出对应的小写字符，
 //如果是数字不输出。
-//#include<stdio.h>
-//#include<stdlib.h>
-//
-//#include<Windows.h>
-//int main()
-//{
-//	char ch = 0;
-//	while ((ch = getchar()) != EOF)
-//	{
-//
-//
-//		if ((ch >= 'A') && ('Z' >= ch))
-//		{
-//			putchar(ch + 32);
-//		}
-//		else if ((ch >= 'a') && ('z' >= ch))
-//		{
-//			putchar(ch - 32);
-//		}
-//		else
-//		{
-//
-//		}
-//	}
-//	system("pause");
-//	return 0;
-//}
+#include<stdio.h>
+#include<Windows.h>
+int main()
+{
+	char ch = 0;
+	while ((ch = getchar()) != EOF)
+	{
+
+
+		if ((ch >= 'A') && ('Z' >= ch))
+		{
+			putchar(ch + 32);
+		}
+		else if ((ch >= 'a') && ('z' >= ch))
+		{
+			putchar(ch - 32);
+		}
+		else
+		{
+		}
+	}
+	system("pause");
+	return 0;
+}
 
 //5.关机程序
+#if 0
 #include<stdio.h>
 
 #include<Windows.h>
@@ -215,3 +213,4 @@ int main()
 	system("pause");
 	return 0;
 }
+#endif
