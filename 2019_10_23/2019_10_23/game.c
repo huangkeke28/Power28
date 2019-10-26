@@ -150,8 +150,8 @@ void ComputerMove(char board[ROW][COL], int row, int col)
 	printf("µçÄÔ×ß:>\n");
 	while (1)
 	{
-		x = rand() % row;
-		y = rand() % col;
+		x = rand() % row -1;
+		y = rand() % col -1;
 		if (board[x][y] == ' ');
 		{
 			board[x][y] = '&';

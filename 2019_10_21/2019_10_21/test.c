@@ -78,63 +78,63 @@
 //	return 0;
 //}
 //4.
-//创建一个数组，
-//实现函数init（）初始化数组、
-//实现empty（）清空数组、
-//实现reverse（）函数完成数组元素的逆置。
-//要求：自己设计函数的参数，返回值。
-//
-//#include<stdio.h>
-//#include<Windows.h>
-//void Print(int, int);
-//void init(int arr[], int sz)
-//{
-//	int i = 0;
-//	for (i = 0; i < sz; i++)
-//	{
-//		arr[i] = i;
-//	}
-//}
-//void Print(int arr[], int sz)
-//{
-//	int i = 0;
-//	for (i = 0; i < sz; i++)
-//	{
-//		printf("%d ", arr[i]);
-//	}
-//	printf("\n");
-//}
-//void reverse(int arr[], int sz)
-//{
-//	int left = 0;
-//	int right = sz - 1;
-//	while (left < right)
-//	{
-//		int temp = arr[left];
-//		arr[left] = arr[right];
-//		arr[right] = temp;
-//		left++;
-//		right--;
-//	}
-//}
-//void empty(int arr[], int sz)
-//{
-//	memset(arr, -1, sz*arr[0]);
-//}
-//int main()
-//{
-//	int arr[10];
-//	int sz = sizeof(arr) / sizeof(arr[0]);
-//	init(arr,sz);
-//	Print(arr, sz);
-//	reverse(arr,sz);
-//	Print(arr, sz);
-//	empty(arr,sz);
-//	Print(arr, sz);
-//	
-//	system("pause");
-//	return 0;
-//}
+创建一个数组，
+实现函数init（）初始化数组、
+实现empty（）清空数组、
+实现reverse（）函数完成数组元素的逆置。
+要求：自己设计函数的参数，返回值。
+
+#include<stdio.h>
+#include<Windows.h>
+void Print(int, int);
+void init(int arr[], int sz)
+{
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		arr[i] = i;
+	}
+}
+void Print(int arr[], int sz)
+{
+	int i = 0;
+	for (i = 0; i < sz; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+}
+void reverse(int arr[], int sz)
+{
+	int left = 0;
+	int right = sz - 1;
+	while (left < right)
+	{
+		int temp = arr[left];
+		arr[left] = arr[right];
+		arr[right] = temp;
+		left++;
+		right--;
+	}
+}
+void empty(int arr[], int sz)
+{
+	memset(arr, -1, sz*arr[0]);
+}
+int main()
+{
+	int arr[10];
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	init(arr,sz);
+	Print(arr, sz);
+	reverse(arr,sz);
+	Print(arr, sz);
+	empty(arr,sz);
+	Print(arr, sz);
+	
+	system("pause");
+	return 0;
+}
 //
 //5.实现一个函数，判断一个数是不是素数。
 //#include<stdio.h>
