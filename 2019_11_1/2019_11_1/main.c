@@ -11,18 +11,17 @@ void menu()
 }
 void game()
 {
+	int x_no = 0;
+	int y_no = 0;
 	srand((unsigned long)time(NULL));
 	char mine[ROW][COL] = { 0 };
 	char show[ROW][COL] = { 0 };
 	memset(mine, '0', sizeof(mine));
 	memset(show, '*', sizeof(show));
-	//initBoard(mine, ROW, COL,'0');
-	//initBoard(show, ROW, COL,'*');
-	layMines(mine, ROW, COL,Number);
+	layMines(mine, ROW, COL,Number,&x_no,&y_no);
 	displayBoard(show, ROW, COL);
 	//displayBoard(mine, ROW, COL);
-
-	removeMines(mine,show,ROW,COL);
+    removeMines(mine,show,ROW,COL,&x_no,&y_no);
 }
 void test()
 {
