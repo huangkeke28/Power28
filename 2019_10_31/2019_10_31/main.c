@@ -73,9 +73,50 @@ void test()
 
 
 
+//int main()
+//{
+//	test();
+//	system("pause");
+//	return 0;
+//}
+
+
+//√∞≈›≈≈–Ú
+//Ωµ–Ú
+
+void bubbleSort(int* arr, int len)
+{
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < len - 1; i++)
+	{
+		for (j = 0; j < len - 1 - i; j++)
+		{//11 2 32 
+			if (arr[j]<arr[j + 1])
+			{
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+			}
+		}
+	}
+}
+void ergodicArr(int* arr, int len)
+{
+	int i = 0;
+	for (i = 0; i < len; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+}
 int main()
 {
-	test();
+	int arr[] = { 12, 43, 542, 132, 54, 7, 98, 341, 32, 8, 23 };
+	int len = sizeof(arr) / sizeof(arr[0]);
+	ergodicArr(arr, len);
+	bubbleSort(arr, len);
+	ergodicArr(arr, len);
 	system("pause");
 	return 0;
 }

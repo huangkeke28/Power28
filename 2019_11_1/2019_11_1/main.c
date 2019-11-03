@@ -20,7 +20,6 @@ void game()
 	memset(show, '*', sizeof(show));
 	layMines(mine, ROW, COL,Number,&x_no,&y_no);
 	displayBoard(show, ROW, COL);
-	//displayBoard(mine, ROW, COL);
     removeMines(mine,show,ROW,COL,&x_no,&y_no);
 }
 void test()
