@@ -10,24 +10,46 @@ void Menu()
 
 
 }
+int Guess()
+{
+	int result = 0;
+	result = rand() % 2;
+	int g = 0;
+	printf("硬币已抛，请猜正反面：\n");
+	scanf("%d", &g);
+	if (result == g)
+	{
+		printf("你猜对了,你先走\n");
+		return 1;
+	}
+	printf("你猜错了，电脑先走\n");
+	return 0;
+}
+
 void game()
 {
-	srand((unsigned long)time(NULL));
 	char judge = 0;
+	srand((unsigned long)time(NULL));
 	char board[ROW][COL] = { 0 };
 	initBoard(board,ROW,COL);
-	displayBoard(board,ROW,COL);
-	do
-	{
-		playerMove(board, ROW, COL);
-		displayBoard(board, ROW, COL);
-		judge = isWin(board,ROW,COL);
-		if (judge != 'C')
+	int who=Guess();
+	displayBoard(board, ROW, COL);
+	do{
+		switch (who)
 		{
+		case 1:
+			playerMove(board, ROW, COL);
+			who = 0;
+			break;
+		case 0:
+			computerMove(board, ROW, COL);
+			who = 1;
+			break;
+		default:
 			break;
 		}
-		computerMove(board, ROW, COL);
 		displayBoard(board, ROW, COL);
+
 		judge = isWin(board,ROW,COL);
 		if (judge != 'C')
 		{
@@ -73,17 +95,17 @@ void test()
 
 
 
-//int main()
-//{
-//	test();
-//	system("pause");
-//	return 0;
-//}
+int main()
+{
+	test();
+	system("pause");
+	return 0;
+}
 
 
 //冒泡排序
 //降序
-
+#if 0
 void bubbleSort(int* arr, int len)
 {
 	int i = 0;
@@ -120,3 +142,4 @@ int main()
 	system("pause");
 	return 0;
 }
+#endif

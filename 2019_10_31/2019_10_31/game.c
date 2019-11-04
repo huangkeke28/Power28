@@ -110,8 +110,6 @@ char isWin(char board[ROW][COL], int row, int col)
 	if (isFull(board, ROW, COL))
 		return 'T';
 	return 'C';
-
-
 }
 
 void computerMove(char board[ROW][COL], int row, int col)
