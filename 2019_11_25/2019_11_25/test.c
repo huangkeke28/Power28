@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<Windows.h>
+#include<string.h>
 #pragma warning(disable:4996)
 //1.调整数组使奇数全部都位于偶数前面。
 //
@@ -119,7 +120,7 @@
 //ABCD左旋一个字符得到BCDA
 //ABCD左旋两个字符得到CDAB
 
-#include<string.h>
+
 //方法一： 循环移位
 //void left_remove(char *p, int n, int len)
 //{
@@ -262,12 +263,84 @@
 //	return 0;
 //}
 
-
-2.判断一个字符串是否为另外一个字符串旋转之后的字符串。
-例如：给定s1 = AABCD和s2 = BCDAA，返回1
-给定s1 = abcd和s2 = ACBD，返回0.
-
-AABCD左旋一个字符得到ABCDA
-AABCD左旋两个字符得到BCDAA
-
-AABCD右旋一个字符得到DAABC
+//
+//2.判断一个字符串是否为另外一个字符串旋转之后的字符串。
+//例如：给定s1 = AABCD和s2 = BCDAA，返回1
+//给定s1 = abcd和s2 = ACBD，返回0.
+//
+//AABCD左旋一个字符得到ABCDA
+//AABCD左旋两个字符得到BCDAA
+//
+//AABCD右旋一个字符得到DAABC
+void LeftRotate(char* s, int k)
+{
+	int len = strlen(s);
+	char* p;
+	char* q;
+	for (p = s + k - 1; p >= s; p--)
+	{
+		for (q = p; q < p + len - k; q++)
+		{
+			char tmp = *q;
+			*q = *(q + 1);
+			*(q + 1) = tmp;
+		}
+	}
+}
+void RightRotate(char* s, int k)
+{
+	int len = strlen(s);
+	char* p;
+	char* q;
+	for (p = s + len - k; p < s + len; p++)
+	{
+		for (q = p; q > s; q--)
+		{
+			char tmp = *q;
+			*q = *(q - 1);
+			*(q - 1) = tmp;
+		}
+	}
+}
+int isRotate(char* s1, char* s2)
+{
+	int len1 = strlen(s1);
+	int len2 = strlen(s2);
+	if (len1 != len2)
+	{
+		return 0;
+	}
+	char* s;
+	int i = 0;
+	for (i = 0; i <= len1; i++)
+	{
+		s = s1;
+		LeftRotate(s, i);
+		if (strcmp(s, s2) == 0)
+		{
+			return 1;
+		}
+		s = s1;
+		RightRotate(s, i);
+		if (strcmp(s, s2) == 0)
+		{
+			return 1;
+		}
+	}
+	return 0;
+}
+int main()
+{
+	char s1[] = "AABCD";
+	char s2[] = "BCDAA";
+	if (isRotate(s1, s2))
+	{
+		printf("是旋转之后的\n");
+	}
+	else
+	{
+		printf("不是旋转之后的\n");
+	}
+	system("pause");
+	return 0;
+}

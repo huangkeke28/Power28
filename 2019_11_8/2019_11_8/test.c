@@ -191,7 +191,7 @@ int main()
 	struct Stu* pStu = &stu;//结构成员访问
 
 	stu.age = 20;
-	set_agel(stu);
+	//set_agel(stu);
 
 	pStu->age = 20;
 	set_age2(pStu);
