@@ -9,49 +9,49 @@
 //输入一个整数数组，实现一个函数，
 //来调整该数组中数字的顺序使得数组中所有的奇数位于数组的前半部分，
 //所有偶数位于数组的后半部分。
-//void adjustArr(int* arr, int len)
-//{
-//	int i = 0;
-//	int* left = arr;
-//	int* right = arr + len - 1;
-//	int temp = 0;
-//	while (left < right)//2 3 4 5 6 7 8
-//	{
-//		while (*left % 2 != 0)//奇数
-//		{
-//			left++;
-//		}
-//		while (*right % 2 == 0)//偶数
-//		{
-//			right--;
-//		}
-//		if (left < right)
-//		{
-//			temp = *left;
-//			*left = *right;
-//			*right = temp;
-//		}
-//	}
-//}
-//void Print(int* arr, int len)
-//{
-//	int i = 0;
-//	for (i = 0; i < len; i++)
-//	{
-//		printf("%d ", arr[i]);
-//	}
-//	printf("\n");
-//}
-//int main()
-//{
-//	int arr[] = { 2, 3 ,4 ,5 ,6 ,7 ,8 };
-//	int len = sizeof(arr) / sizeof(arr[0]);
-//	Print(arr, len);
-//	adjustArr(arr, len);
-//	Print(arr, len);
-//	system("pause");
-//	return 0;
-//}
+void adjustArr(int* arr, int len)
+{
+	int i = 0;
+	int* left = arr;
+	int* right = arr + len - 1;
+	int temp = 0;
+	while (left < right)//2 3 4 5 6 7 8
+	{
+		while (*left % 2 == 0)//偶数
+		{
+			left++;
+		}
+		while (*right % 2 != 0)//奇数
+		{
+			right--;
+		}
+		if (left < right)
+		{
+			temp = *left;
+			*left = *right;
+			*right = temp;
+		}
+	}
+}
+void Print(int* arr, int len)
+{
+	int i = 0;
+	for (i = 0; i < len; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+}
+int main()
+{
+	int arr[] = { 2, 3 ,4 ,5 ,6 ,7 ,8 };
+	int len = sizeof(arr) / sizeof(arr[0]);
+	Print(arr, len);
+	adjustArr(arr, len);
+	Print(arr, len);
+	system("pause");
+	return 0;
+}
 
 //2.
 ////杨氏矩阵
@@ -73,6 +73,7 @@
 //1 2 3
 //4 5 6
 //7 8 9
+#if 0
 void Print(int arr[ROW][COL], int row, int col)
 {
 	int i = 0;
@@ -131,3 +132,4 @@ int main()
 	system("pause");
 	return 0;
 }
+#endif
